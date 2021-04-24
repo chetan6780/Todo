@@ -1,6 +1,6 @@
 body {
   /* background: linear-gradient(to left, #ff4331, #d31a50); */
-  background-image: url("christmas.jpg");
+  background-image: url("christmas.jpg"), no-repeat;
   background-image: linear-gradient(rgba(17, 17, 17, 0.5), rgba(14, 14, 13, 0.5)),url("christmas.jpg");
   background-size: cover;
 }
