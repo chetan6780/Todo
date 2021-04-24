@@ -45,6 +45,7 @@ body {
   height: 100%;
   line-height: 40px;
   font-size: 18px;
+  text-transform: capitalize;
 }
 #container ul li #check {
   float: left;
