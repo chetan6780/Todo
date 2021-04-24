@@ -1,6 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond&family=Goudy+Bookletter+1911&display=swap');
+
+*{
+  font-family: 'EB Garamond', serif;
+}
+
 body {
-  /* background-image: linear-gradient(rgba(17, 17, 17, 0.758), rgba(14, 14, 13, 0.71)),url("christmas.jpg"); */
-  /* background-size: auto; */
   background:linear-gradient(rgba(17, 17, 17, 0.758), rgba(14, 14, 13, 0.71)),url("christmas.jpg"),no-repeat;
 }
 
