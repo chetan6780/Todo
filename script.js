@@ -1,51 +1,55 @@
-/* 
+/* ---------------------------------------------------------------------------------------------
 var h = document.createElement('h1')
 var myValue = document.createTextNode('Hello world!')
 h.appendChild(myValue)
 document.querySelector('h1').appendChild(h) 
-*/
+--------------------------------------------------------------------------------------------- */
 
-var ul = document.getElementById("list");
-var li;
 
-var addButton = document.getElementById("add");
+// Selectors -------------------------------------------------------------------------------------------------
+let ul = document.getElementById("list");
+let addButton = document.getElementById("add");
+let removeButton = document.getElementById("remove");
+let removeAllButton = document.getElementById("removeAll");
+let li = ul.children;
+
+// Event Listners ---------------------------------------------------------------------------------------------
 addButton.addEventListener("click", addItem);
-
-var removeButton = document.getElementById("remove");
 removeButton.addEventListener("click", removeItem);
+removeAllButton.addEventListener("click", removeAllItems);
 
+
+// Functions --------------------------------------------------------------------------------------------------
 function addItem() {
-    // console.log("add button clicked");
-    var input = document.getElementById("input");
-    var item = input.value;
-    ul = document.getElementById("list");
-    var textNode = document.createTextNode(item);
+    let input = document.getElementById("input");
+    let text = input.value;
+    let textNode = document.createTextNode(text);
 
-    if (item === "") {
+    if (text === "") {
+        alert("Please Enter The Task!!")
         return false;
-    } else {
+    }
+    else {
         // create li
         li = document.createElement("li");
 
         // create checkbox
-        var checkbox = document.createElement("input");
+        let checkbox = document.createElement("input");
         checkbox.type = "checkbox";
         checkbox.setAttribute("id", "check");
 
         // create label
-        var label = document.createElement("label");
-        label.setAttribute("for", "item"); // optional
+        let label = document.createElement("label");
 
         // add these elements on the web
-        ul.appendChild(label);
-        li.appendChild(checkbox);
         label.appendChild(textNode);
+        li.appendChild(checkbox);
         li.appendChild(label);
         ul.insertBefore(li, ul.childNodes[0]);
 
         setTimeout(() => {
-            li.className = "visual";
-        }, 3);
+            li.className = "mycheck";
+        }, 1);
 
         // clear input
         input.value = "";
@@ -60,3 +64,11 @@ function removeItem() {
         }
     }
 }
+
+function removeAllItems() {
+    li = ul.children;
+    while (li.length > 0) {
+        ul.removeChild(li[0]);
+    }
+}
+// ---------------------------------------------------------------------------------------------------------------
