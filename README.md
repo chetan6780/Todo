@@ -1,2 +1,2 @@
-# Todo-Js
+# Todo
 Todo app made with JavaScript.
